@@ -18,7 +18,9 @@ def handleMessage(msg):
     print(f'Message: {msg}')
     send(msg, broadcast=True)
 
-
+@socketIO.on('connect')
+def connect():
+    print('connected')
 
 if __name__ == '__main__':
     socketIO.run(app, debug=True)
